@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 107b27a60ac38244c99f31e7476b575c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cursorTexture: {fileID: 2800000, guid: d39e2127601318045b2dbc25a7fb3094, type: 3}
+  - sombraPlayer: {instanceID: 0}
+  - submachineAtributosGO: {instanceID: 0}
+  - submachineGO: {instanceID: 0}
+  - disparoSubmachine: {instanceID: 0}
+  - balaSubMachineGO: {instanceID: 0}
+  - SpawnBalaSubMachine: {instanceID: 0}
+  - shotgunAtributosGO: {instanceID: 0}
+  - shotgunGO: {instanceID: 0}
+  - disparoShotgun: {instanceID: 0}
+  - balaShotgunGO: {instanceID: 0}
+  - SpawnBalaShotgunA: {instanceID: 0}
+  - SpawnBalaShotgunB: {instanceID: 0}
+  - SpawnBalaShotgunC: {instanceID: 0}
+  - animacaoPistol: {instanceID: 0}
+  - disparoPistol: {instanceID: 0}
+  - pistolGO: {instanceID: 0}
+  - pistolAtributosGO: {instanceID: 0}
+  - balaPistolGO: {instanceID: 0}
+  - SpawnBalaPistol: {instanceID: 0}
+  - camerashake: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
