@@ -119,22 +119,7 @@ public class CharPlayer : MonoBehaviour {
     public bool EstaCarregandoShotgun { get; set; } = false;
     public bool EstaCarregandoSubmachine { get; set; } = false;
 
-
-
-
-    public void AdicionarMoedas(int qtdMoedas) {
-        MoedasPlayer += qtdMoedas;
-    }
-
-    public void AdicionarAlmas(int qtdAlmas) {
-        AlmasPlayer += qtdAlmas;
-    }
-
-    public void RemoverAlmas(int qtdAlmas) {
-        AlmasPlayer -= qtdAlmas;
-    }
-
-
+    
 
     void Awake() {
 
@@ -458,6 +443,11 @@ public class CharPlayer : MonoBehaviour {
         EstaCarregandoSubmachine = false;
     }
 
+    IEnumerator CoolDownDanoNoPlayer() {
+        yield return new WaitForSeconds(_cooldownPlayerDano);
+        _estaRecebendoDanoPlayer = false;
+    }
+
     public void RecarregarArma(string armaAcarregar) {
         _carregandoPistolSom.Play();
 
@@ -519,11 +509,20 @@ public class CharPlayer : MonoBehaviour {
 
 
 
-    IEnumerator CoolDownDanoNoPlayer() {
-        yield return new WaitForSeconds(_cooldownPlayerDano);
-        _estaRecebendoDanoPlayer = false;
+  
+
+
+    public void AdicionarMoedas(int qtdMoedas) {
+        MoedasPlayer += qtdMoedas;
     }
 
+    public void AdicionarAlmas(int qtdAlmas) {
+        AlmasPlayer += qtdAlmas;
+    }
+
+    public void RemoverAlmas(int qtdAlmas) {
+        AlmasPlayer -= qtdAlmas;
+    }
 
 
     // -- Quando pegar balas de alguma fonte.
