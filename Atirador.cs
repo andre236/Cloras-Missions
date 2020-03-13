@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +24,7 @@ public class Atirador : MonoBehaviour {
     
     private CameraShake _cameraShake;
     private IAatirador _iaAtirador;
+
 
     public float VidaTotal { get; private set; } = 6;
     public float VidaAtual { get; private set; }
