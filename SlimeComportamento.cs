@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -108,10 +108,7 @@ public class SlimeComportamento : MonoBehaviour {
 
         }
 
-        //Vida do inimigo chegar a 0...
-        if (VidaAtual <= 0) {
-            MorteSlime();
-        }
+      
 
 
 
@@ -156,6 +153,10 @@ public class SlimeComportamento : MonoBehaviour {
         VidaAtual -= danoInfligido;
         _slimeAnimacao.SetTrigger("recebendoDano");
         _slimeAudio[1].Play();
+
+        if (VidaAtual <= 0) {
+            MorteSlime();
+        }
     }
 
 

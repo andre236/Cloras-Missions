@@ -238,17 +238,7 @@ public class CharPlayer : MonoBehaviour {
         //Vida do player
         _vidaAtualIMG.fillAmount = VidaAtual / _vidaTotal;
 
-
-
-        if (VidaAtual <= 0) {
-            VidaAtual = 0;
-            EstaMorto = true;
-            _cameraShake.gameObject.transform.position = new Vector2(transform.position.x, transform.position.y);
-            MortePlayer();
-
-            //Debug.Log("Game Over!");
-        }
-
+        
         if (PenteReservaShotgun > TotalPenteReservaShotgun) {
             PenteReservaShotgun = TotalPenteReservaShotgun;
         }
@@ -505,6 +495,16 @@ public class CharPlayer : MonoBehaviour {
             StartCoroutine("CoolDownDanoNoPlayer");
             _estaRecebendoDanoPlayer = true;
         }
+
+        if (VidaAtual <= 0) {
+            VidaAtual = 0;
+            EstaMorto = true;
+            _cameraShake.gameObject.transform.position = new Vector2(transform.position.x, transform.position.y);
+            MortePlayer();
+
+            //Debug.Log("Game Over!");
+        }
+
     }
 
 
