@@ -29,7 +29,7 @@ public class SpawnMonstros : MonoBehaviour {
 
     IEnumerator TimeSpawnMonstro() {
         yield return new WaitForSeconds(_spawnMonstrosTime);
-        if (_levelAttackLigado && _levelAttack._roundAtivo) {
+        if (_levelAttackLigado && _levelAttack.RoundAtivo) {
             transform.position = _posicoesAleatorias[Random.Range(0, 4)];
         }
         _valorMonstro = Random.Range(0, 2);
