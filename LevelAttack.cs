@@ -16,15 +16,15 @@ public class LevelAttack : MonoBehaviour {
 
     private CharPlayer _charPlayer;
 
-    public bool _roundAtivo { get; private set; }
-    public int _round { get; private set; }
+    public bool RoundAtivo { get; private set; }
+    public int Round { get; private set; }
 
 
     void Start() {
         _UImenu = GameObject.Find("UImenu");
         _UImenu.SetActive(false);
         _charPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<CharPlayer>();
-        _roundAtivo = true;
+        RoundAtivo = true;
       //  _roundTXT = GameObject.Find("Round").GetComponent<Text>();
         _timeRoundTXT = GameObject.Find("TimeRound").GetComponent<Text>();
 
@@ -43,23 +43,32 @@ public class LevelAttack : MonoBehaviour {
         _timeRoundTXT.text = _timeRound.ToString("0");
        
 
-        if (_roundAtivo) {
+        if (RoundAtivo) {
             _timeRound -= Time.deltaTime;
-            if(_timeRound <= 0){
-                _timeRound = 0;
-                _roundAtivo = false;
-            }
         }
+
+       
         
     }
     
+    public void TransicaoEntreRounds() {
+
+        if (_timeRound <= 0 && _charPlayer.VidaAtual > 0) {
+            _timeRound = 0;
+            RoundAtivo = false;
+            StartCoroutine("ContagemParaComecarRound");
+        }
+    }
+
 
     public void AvancarRound() {
-        _round++;
+            //Série de eventos
+            Round++;
+            
     }
 
     public void Morte() {
-        if(_charPlayer.VidaAtual == 0) {
+        if(_charPlayer.VidaAtual <= 0) {
             StartCoroutine("TelaPosMorte");
         }
   
@@ -76,7 +85,12 @@ public class LevelAttack : MonoBehaviour {
 
     IEnumerator TelaPosMorte() {
         yield return new WaitForSeconds(2f);
-        _roundAtivo = false;
+        RoundAtivo = false;
         _UImenu.SetActive(true);
+    }
+
+    IEnumerator ContagemParaComecarRound() {
+        yield return new WaitForSeconds(3);
+        AvancarRound();
     }
 }
